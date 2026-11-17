@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="One day of checking fuel supplier bills, in six quick screens.">
-<title>Caught: One Tuesday</title>
+<meta name="description" content="Seemab Hassan's one day audit of fuel supplier bills, in six quick screens.">
+<title>Caught by Seemab Hassan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Caveat:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -64,6 +64,13 @@ nav button{border:0;border-radius:14px;padding:15px 18px;font-weight:600;font-si
 /* page 1 */
 .hero{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px}
 .hero .q{font-size:20px;font-weight:600;line-height:1.3;max-width:24ch}
+.byline{display:flex;flex-direction:column;gap:2px;margin-bottom:10px;padding-left:12px;border-left:5px solid var(--pen)}
+.byline .by{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.byline .name{font-family:var(--display);font-weight:900;font-size:clamp(54px,15.5vw,80px);line-height:.88;text-transform:uppercase;letter-spacing:1px;max-width:7ch}
+.byline .role{font-size:15px;font-weight:600;margin-top:4px}
+.byline .co{font-size:13.5px;color:var(--muted)}
+.brand .who{color:var(--pen);font-weight:600}
+.sig{margin-top:auto;align-self:flex-end;font-family:var(--hand);font-size:22px;color:var(--pen);opacity:.85;transform:rotate(-2deg);padding-top:6px}
 .sign{position:relative;display:inline-block;align-self:flex-start;margin:10px 0 4px 8px;padding:4px 14px 0 8px}
 .sign b{font-family:var(--display);font-weight:900;font-size:clamp(70px,19vw,128px);line-height:.9;display:block;white-space:nowrap}
 .sign sup{font-size:.4em;vertical-align:1em;margin-right:2px}
@@ -95,9 +102,9 @@ nav button{border:0;border-radius:14px;padding:15px 18px;font-weight:600;font-si
 .stamp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-9deg);border:5px solid var(--pen);color:var(--pen);border-radius:10px;padding:8px 16px 4px;font-family:var(--display);font-weight:900;font-size:clamp(34px,10vw,50px);text-transform:uppercase;line-height:.95;text-align:center;background:color-mix(in srgb,var(--sheet) 80%,transparent);pointer-events:none;opacity:0;white-space:nowrap}
 .stamp small{display:block;font-size:.45em;letter-spacing:1px}
 .stamp.show{opacity:1;animation:slam .35s cubic-bezier(.2,1.4,.4,1)}
-.stamp.inline{position:relative;left:auto;top:auto;transform:rotate(-7deg);display:none;margin:6px auto 0}
+.stamp.inline{position:relative;left:auto;top:auto;transform:rotate(-6deg);display:none;margin:8px auto 0;font-size:clamp(26px,7.4vw,40px);white-space:normal}
 .stamp.inline.show{display:table;animation:slam2 .35s cubic-bezier(.2,1.4,.4,1)}
-@keyframes slam2{from{transform:rotate(-7deg) scale(2.2);opacity:0}}
+@keyframes slam2{from{transform:rotate(-6deg) scale(2.2);opacity:0}}
 @keyframes slam{from{transform:translate(-50%,-50%) rotate(-9deg) scale(2.2);opacity:0}}
 
 /* months */
@@ -174,13 +181,14 @@ input[type=range]{width:100%;accent-color:var(--pen);height:34px}
 <body>
 <div class="app">
   <div class="top" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="brand"><span>Tue · Nov 17, 2026</span><span id="step">1 / 6</span></div>
+  <div class="brand"><span><b class="who">Seemab Hassan</b> · Nov 17, 2026</span><span id="step">1 / 6</span></div>
   <main id="main">
 
     <!-- 1 -->
     <section class="page" id="p-start" data-hash="start" aria-label="Start">
       <div class="hero">
-        <div class="q">One day of checking our fuel suppliers' bills.</div>
+        <div class="byline"><span class="by">An audit by</span><span class="name">Seemab Hassan</span><span class="role">Head of Retail Analytics &amp; Pricing Operations</span><span class="co">NSK Petroleum Wholesale</span></div>
+        <div class="q">One day of checking fuel supplier bills, line by line.</div>
         <div class="sign" aria-label="$421,534 asked back">
           <b class="num"><sup>$</sup>421,534</b>
           <svg viewBox="0 0 400 140" preserveAspectRatio="none" aria-hidden="true"><path d="M210 10 C 320 4, 396 30, 394 72 C 392 116, 300 136, 196 134 C 86 132, 6 112, 6 70 C 6 30, 92 8, 204 9 C 262 10, 300 16, 330 26"/></svg>
@@ -199,6 +207,7 @@ input[type=range]{width:100%;accent-color:var(--pen);height:34px}
         <div class="bill" id="bill"></div>
         <div class="stamp" id="fStamp">Caught<small>one month: $8,250</small></div>
       </div>
+      <div class="sig">checked by Seemab Hassan</div>
     </section>
 
     <!-- 3 -->
@@ -211,6 +220,7 @@ input[type=range]{width:100%;accent-color:var(--pen);height:34px}
         <div class="vsr"><span>Fines</span><div class="vsb f">$247,500</div></div>
         <div class="vsr"><span>Normal fees</span><div class="vsb r" style="width:93.4%">$231,272</div></div>
       </div>
+      <div class="sig">checked by Seemab Hassan</div>
     </section>
 
     <!-- 4 -->
@@ -219,6 +229,7 @@ input[type=range]{width:100%;accent-color:var(--pen);height:34px}
       <p class="say">BP rent should go up 3% a year. Which year didn't?</p>
       <div class="tiles" id="tiles"></div>
       <div class="reveal" id="rReveal"><b>+3.65%</b><br>About $135 too much every month since then. <b style="font-size:22px">$3,263</b> so far.</div>
+      <div class="sig">checked by Seemab Hassan</div>
     </section>
 
     <!-- 5 -->
@@ -233,6 +244,7 @@ input[type=range]{width:100%;accent-color:var(--pen);height:34px}
       </div>
       <button class="tapmore" id="more" type="button">Tap for next message</button>
       <div class="stampWrap" style="min-height:70px"><div class="stamp" id="pStamp">Still owed<small>$58,558 · proof printed</small></div></div>
+      <div class="sig">checked by Seemab Hassan</div>
     </section>
 
     <!-- 6 -->
@@ -245,8 +257,8 @@ input[type=range]{width:100%;accent-color:var(--pen);height:34px}
         <button class="flip" type="button" data-v="3905"><div class="in"><div class="face front"><b>BP</b><span>tap</span></div><div class="face backf"><b class="num">$3,905</b><span>Rent + loyalty. Prices 2,101 of 2,106 exact.</span></div></div></button>
         <button class="flip" type="button" data-v="0"><div class="in"><div class="face front"><b>Jericho</b><span>tap</span></div><div class="face backf"><b>Next</b><span>Every report requested for our CPA.</span></div></div></button>
       </div>
-      <div class="total"><div class="big num" id="sTotal">$0</div><p>asked back in one day</p></div>
-      <div class="stamp inline" id="sStamp">Caught<small>4 suppliers · 1 day</small></div>
+      <div class="total"><div class="big num" id="sTotal">$0</div><p>asked back in one day by <b>Seemab Hassan</b></p></div>
+      <div class="stamp inline" id="sStamp">Caught by<br>Seemab Hassan<small>4 suppliers · 1 day</small></div>
     </section>
   </main>
   <nav><button id="prev" type="button" aria-label="Back">←</button><button id="next" type="button">Show me how →</button></nav>
